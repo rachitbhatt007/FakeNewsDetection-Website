@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block title%}
+	<title>Index page</title>
+{%endblock%}
+
+{%block body_block%}
+<br><br><br>
+<form method="POST" class="col-8 cm">
+	{{csrf_token}}
+	<label for="news"><h1>Fake News Detection</h1></label>
+	<input type="textarea" name="news" placeholder="enter news" class="form-control" ><br>
+	<input type="submit" class="btn btn-outline-light" name="predict" value="predict">
+</form>
+<br><br><br>
+<h2 style="color:white;text-align: center;">{{prediction_text}}</h2>
+<h2 style="color:white;text-align: center;">{{probability}}</h2>
+{%endblock%}
+
